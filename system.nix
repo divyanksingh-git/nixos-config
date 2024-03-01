@@ -83,19 +83,7 @@
   };
 
   environment.systemPackages = with pkgs; [
-    # Hyprland
-    mako
-    libnotify
-    hyprpaper
-    rofi-wayland
-    kitty
-    hypridle
-    hyprpicker
-    cliphist
-    brightnessctl
-    pamixer
-    playerctl
-    
+ 
     # Utility
     ncpamixer
     bluetuith
