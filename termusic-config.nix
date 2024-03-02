@@ -1,13 +1,13 @@
-{ homeDir }:''
-music_dir = ["${homeDir}/Music"]
+{ music }:''
+music_dir = ["${music}"]
 player_port = 50101
-player_loop_mode = "${homeDir}/Music/Playlist"
+player_loop_mode = "${music}/Playlist"
 player_volume = 60
 player_speed = 10
 player_gapless = true
 podcast_simultanious_download = 3
 podcast_max_retries = 3
-podcast_dir = "Music/podcast"
+podcast_dir = "${music}/podcast"
 player_seek_step = "Auto"
 player_remember_last_played_position = "Auto"
 enable_exit_confirmation = true

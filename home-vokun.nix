@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 {
   home.username = "vokun";
   home.homeDirectory = "/home/vokun";
@@ -24,6 +24,30 @@
     style = (import ./waybar-style.nix {});
     settings = [ (import ./waybar-config.nix {}) ];
   };
+  
+  # Zsh
+  programs.zsh = {
+    enable = true;
+    enableCompletion = true;
+    enableAutosuggestions = true;
+    syntaxHighlighting.enable = true;
+
+    history.size = 10000;
+    history.path = "${config.xdg.dataHome}/zsh/history";
+  
+    oh-my-zsh = {
+      enable = true;
+      plugins = [ 
+        "command-not-found" 
+        "bgnotify" 
+        "colored-man-pages" 
+        "extract" 
+        "web-search"
+        "history-substring-search" 
+      ];
+      theme = "robbyrussell";
+    };
+  };
 
   # Environment Variables
   home.sessionVariables = {
@@ -42,6 +66,8 @@
     ".config/hypr/hyprpaper.conf" = { text = (import ./hyprpaper.nix {});};
 
     # Termusic
-    ".config/termusic/config.toml" = { text = (import ./termusic-config.nix { homeDir="/home/vokun"; }); };
+    ".config/termusic/config.toml" = { 
+      text = (import ./termusic-config.nix { music="${config.xdg.userDirs.music}"; }); 
+     };
   };
 }
