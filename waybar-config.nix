@@ -1,5 +1,4 @@
-{}:''
-{
+{}:{
     "layer" = "top";
     "position" = "top";
     "height" = 24;
@@ -56,4 +55,3 @@
         "on-click" = "pavucontrol";
     };
 }
-''

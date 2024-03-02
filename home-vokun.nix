@@ -21,7 +21,7 @@
   programs.waybar = {
     enable = true;
     style = (import ./waybar-style.nix {});
-    #settings = [ (import ./waybar-config.nix {})]; 
+    settings = [ (import ./waybar-config.nix {}) ];
   };
 
   # Environment Variables
@@ -31,6 +31,9 @@
   };
    
   home.file =  {
+    # Background
+    ".config/hypr/background".source = ./background;
+    
     # Hyprlock
     ".config/hypr/hyprlock.conf" = { text = (import ./hyprlock.nix {});};
     
