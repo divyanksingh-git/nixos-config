@@ -1,7 +1,7 @@
 { config, lib, pkgs, modulesPath, ... }:
 
 {
-  fileSystems."/home/vokun/Drive/ehdd" =
+  fileSystems."/mount/ehdd" =
     { device = "/dev/disk/by-uuid/af6f8aa1-c751-4f16-aacc-13dde60248a0";
       fsType = "ext4";
       options = [
@@ -13,7 +13,7 @@
       ];
     };
  
-    fileSystems."/home/vokun/Drive/essd" =
+    fileSystems."/mount/essd" =
     { device = "/dev/disk/by-uuid/2174726A31EB68ED";
       fsType = "ntfs-3g";
       options = [  
