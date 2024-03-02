@@ -30,6 +30,7 @@
         inherit system;
         modules = [
           ./hardware-configuration.nix
+          ./swap.nix
           ./graphics.nix
           ./boot.nix
           ./system.nix
