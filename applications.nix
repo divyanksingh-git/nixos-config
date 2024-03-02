@@ -29,5 +29,8 @@
   keepassxc
   protonvpn-cli
   gimp-with-plugins
+  
+  # Misc
+  glava
   ];
 }

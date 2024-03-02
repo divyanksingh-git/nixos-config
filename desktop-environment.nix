@@ -83,6 +83,7 @@
     qview
     calcurse
     calc
+    grim
   ])
   
   ++
