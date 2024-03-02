@@ -6,7 +6,7 @@ general {
 
 background {
     monitor = eDP-1
-    path = /home/vokun/.config/hypr/background
+    path = /home/vokun/.config/hypr/background.png
     blur_passes =  # 0 disables blurring
     blur_size = 1
 }

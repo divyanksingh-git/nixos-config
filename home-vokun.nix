@@ -20,6 +20,7 @@
   # Waybar
   programs.waybar = {
     enable = true;
+    systemd.enable = true;
     style = (import ./waybar-style.nix {});
     settings = [ (import ./waybar-config.nix {}) ];
   };
@@ -32,7 +33,7 @@
    
   home.file =  {
     # Background
-    ".config/hypr/background".source = ./background;
+    ".config/hypr/background.png".source = ./background.png;
     
     # Hyprlock
     ".config/hypr/hyprlock.conf" = { text = (import ./hyprlock.nix {});};

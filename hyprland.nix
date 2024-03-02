@@ -19,7 +19,6 @@ monitor=eDP-1,preferred,auto,1
 # See https://wiki.hyprland.org/Configuring/Keywords/ for more
 
 # Execute your favorite apps at launch
-exec-once = waybar 
 exec-once = udiskie
 exec-once = hyprpaper
 
