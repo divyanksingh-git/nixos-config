@@ -12,12 +12,8 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    
-    hyprland.url = "github:hyprwm/Hyprland";
-    hyprland-plugins = {
-      url = "github:hyprwm/hyprland-plugins";
-      inputs.hyprland.follows = "hyprland";
-    };
+  
+    stylix.url = "github:danth/stylix";
 
   };
 
@@ -26,9 +22,9 @@
               nixpkgs-stable, 
               nixpkgs-unstable, 
               nixpkgs-master, 
-              home-manager, 
-              hyprland,
-              hyprland-plugins, ... }:
+              home-manager,
+              stylix,
+              ... }:
   let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
@@ -50,8 +46,7 @@
           inherit pkgs-unstable;
           inherit pkgs-master;
           inherit home-manager;
-          inherit hyprland;
-          inherit hyprland-plugins;
+          inherit stylix;
         };
       };
     }; 

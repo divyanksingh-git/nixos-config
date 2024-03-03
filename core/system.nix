@@ -101,6 +101,7 @@
     nvtop
     fastfetch 
     upower
+    killall
   ];
 
   # Services

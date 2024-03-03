@@ -21,7 +21,7 @@ monitor=eDP-1,preferred,auto,1
 # Execute your favorite apps at launch
 exec-once = udiskie
 exec-once = hyprpaper
-exec-once = waybar
+#exec-once = waybar
 
 # Source a file (multi-file configs)
 # source = ~/.config/hypr/myColors.conf

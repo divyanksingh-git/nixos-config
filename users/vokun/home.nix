@@ -1,16 +1,11 @@
-{ lib, config, pkgs, hyprland-plugins, ... }:
+{ lib, config, pkgs, stylix, ... }:
 {
+  imports = [ stylix.homeManagerModules.stylix ];
+
   home.username = "vokun";
   home.homeDirectory = "/home/vokun";
   
-  home.packages = []; 
- 
-  # Theme
-  qt.enable = true;
-  #qt.platformTheme = "gtk";
-  
-  gtk.enable = true;
-  #gtk.theme.name = "theme";
+  home.packages = [];
   
   # Git
   programs.git = {
@@ -23,10 +18,26 @@
   wayland.windowManager.hyprland = {
     enable = true;
     extraConfig = (import ./hypr/land.nix {});
-    plugins = [
-      hyprland-plugins.packages.${pkgs.system}.hyprbars
-      # ...
-    ];
+  };
+  
+  # Rofi
+  programs.rofi = {
+    enable = true;
+  };
+  
+  # Mako
+  services.mako.enable = true;
+  
+  # Kitty
+  programs.kitty.enable = true;
+
+  # Waybar
+  programs.waybar = {
+    enable = true;
+    systemd.enable = true;
+    systemd.target = "hyprland-session.target";
+    style = (import ./waybar/style.nix {});
+    settings = [ (import ./waybar/config.nix {}) ];
   };
 
   # Fish
@@ -96,6 +107,26 @@
     ];
   };
 
+  # Theming
+  gtk.iconTheme.package = pkgs.papirus-icon-theme;
+  gtk.iconTheme.name = "Papirus-Dark";
+
+  stylix = {
+      base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-material-dark-hard.yaml";
+      polarity = "dark";
+      autoEnable = true;
+      image = ./cache/background.png;
+      
+      cursor.package = pkgs.numix-cursor-theme;
+      
+      targets.waybar = {
+        #enableCenterBackColors = true;
+        enableLeftBackColors = true;
+        enableRightBackColors = true;
+      };
+      
+ 
+  };
   # Environment Variables
   home.sessionVariables = {
     CHROME_EXECUTABLE="${pkgs.brave}/bin/brave";
@@ -103,10 +134,7 @@
   };
    
   home.file =  {
-    # Theme
-    #".themes/theme".source = ./themes/theme/Catppuccin-Mocha-Standard-Blue-Dark;
-    #".icons/folder"    
-
+   
     # Background
     ".config/hypr/background.png".source = ./cache/background.png;
     
@@ -117,8 +145,8 @@
     ".config/hypr/hyprpaper.conf" = { text = (import ./hypr/paper.nix {});};
      
     # Waybar
-    ".config/waybar/config" = { text = (import ./waybar/config.nix {});};
-    ".config/waybar/style.css" = { text = (import ./waybar/style.nix {});};
+    #".config/waybar/config" = { text = (import ./waybar/config.nix {});};
+    #".config/waybar/style.css" = { text = (import ./waybar/style.nix {});};
 
     # Termusic
     ".config/termusic/config.toml" = { 

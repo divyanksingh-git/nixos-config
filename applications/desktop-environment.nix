@@ -1,4 +1,4 @@
-{ config, pkgs, pkgs-master, hyprland, ... }:
+{ config, pkgs, pkgs-master, ... }:
 {
   # Login Manager (tuigreet)
   services.greetd = {
@@ -15,7 +15,6 @@
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
-    package = hyprland.packages.${pkgs.system}.hyprland;
   };
 
   xdg.portal = {
@@ -44,14 +43,6 @@
       };
   };
   
-  
-  # Pam
-  security.pam.services.swaylock = {
-    text = ''
-      auth include login
-    '';
-  };
-  
   # Light
   programs.light.enable = true;
 
@@ -74,7 +65,8 @@
     udiskie
     xdg-utils
     polkit_gnome
-    
+    base16-schemes
+
     # Applications
     (brave.override {
     commandLineArgs = [ "--enable-chrome-browser-cloud-management --enable-features=UseOzonePlatform --ozone-platform=x11"];
