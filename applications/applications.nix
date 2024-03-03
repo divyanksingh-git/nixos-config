@@ -11,6 +11,10 @@
   yt-dlp
   ffmpeg_5-full
   fzf
+  fd
+  bat
+  lsd
+  grc
   wget 
 
   # Application

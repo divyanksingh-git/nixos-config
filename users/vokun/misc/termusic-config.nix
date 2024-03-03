@@ -1,7 +1,7 @@
 { music }:''
 music_dir = ["${music}"]
 player_port = 50101
-player_loop_mode = "${music}/Playlist"
+player_loop_mode = "Playlist"
 player_volume = 60
 player_speed = 10
 player_gapless = true

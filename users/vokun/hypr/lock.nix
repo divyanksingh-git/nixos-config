@@ -19,7 +19,7 @@ input-field {
     inner_color = rgb(200, 200, 200)
     font_color = rgb(10, 10, 10)
     fade_on_empty = true
-    placeholder-text = <i>Input Password...</i>
+    placeholder-text = <i></i>
 
     position = 0, -30
     halign = center

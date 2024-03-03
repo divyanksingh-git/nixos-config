@@ -1,4 +1,4 @@
-{ config, pkgs, pkgs-master, ... }:
+{ config, pkgs, pkgs-master, hyprland, ... }:
 {
   # Login Manager (tuigreet)
   services.greetd = {
@@ -15,7 +15,9 @@
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
+    package = hyprland.packages.${pkgs.system}.hyprland;
   };
+
   xdg.portal = {
     enable = true;
     wlr.enable = true;
@@ -24,16 +26,15 @@
       pkgs.xdg-desktop-portal-gtk
     ];
   };
-  programs.waybar.enable = true;
 
   # Polkit
   security.polkit.enable = true;
   systemd.user.services.polkit-authentication-agent = {
     enable = true;
     description = "polkit-gnome-authentication-agent-1";
-    wantedBy = [ "default.target" ];
-    wants = [ "default.target" ];
-    after = [ "default.target" ];
+    wantedBy = [ "hyprland-session.target" ];
+    wants = [ "hyprland-session.target" ];
+    after = [ "hyprland-session.target" ];
     serviceConfig = {
         Type = "simple";
         ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
@@ -50,6 +51,9 @@
       auth include login
     '';
   };
+  
+  # Light
+  programs.light.enable = true;
 
   environment.systemPackages = (with pkgs; [
     # Hyprland
@@ -61,10 +65,10 @@
     hypridle
     hyprpicker
     cliphist
-    brightnessctl
     pamixer
     playerctl
-    
+    waybar
+
     # Utility
     xdg-user-dirs
     udiskie

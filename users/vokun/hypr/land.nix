@@ -21,6 +21,7 @@ monitor=eDP-1,preferred,auto,1
 # Execute your favorite apps at launch
 exec-once = udiskie
 exec-once = hyprpaper
+exec-once = waybar
 
 # Source a file (multi-file configs)
 # source = ~/.config/hypr/myColors.conf
@@ -195,8 +196,8 @@ bind = , XF86AudioNext, exec, playerctl next
 bind = , XF86AudioPrev, exec, playerctl previous
 
 # Screen brightness
-bind = , XF86MonBrightnessUp, exec, brightnessctl s +5%
-bind = , XF86MonBrightnessDown, exec, brightnessctl s 5%-
+bind = , XF86MonBrightnessUp, exec, light -A 5
+bind = , XF86MonBrightnessDown, exec, light -U 5
 
 # Custom Binds
 bind = $mainMod, K, exec, firefox -ProfileManager

@@ -81,6 +81,15 @@
 
       };
   };
+  
+  # Doas
+  security.doas.enable = true;
+  security.doas.extraRules = [{
+    groups = [ "wheel" ];
+    keepEnv = true;
+    persist = true;
+  }];
+  security.sudo.enable = false;
 
   environment.systemPackages = with pkgs; [
  
