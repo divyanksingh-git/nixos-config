@@ -19,6 +19,7 @@
   retroarchFull
   dosbox-staging
   itch
+  openmw
   ];
 }
 

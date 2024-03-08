@@ -69,7 +69,7 @@
     xdg-utils
     polkit_gnome
     base16-schemes
-    #libsForQt5.qt5ct
+    libsForQt5.qt5ct
 
     # Applications
     (brave.override {

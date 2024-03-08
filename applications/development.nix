@@ -27,6 +27,7 @@
   (vscodium.override { 
     commandLineArgs =["--enable-features=UseOzonePlatform --ozone-platform=x11"]; 
   })
+
   # Flutter Development
   flutter
   android-studio

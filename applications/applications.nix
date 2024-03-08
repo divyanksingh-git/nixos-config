@@ -23,14 +23,14 @@
   inkscape
   tenacity
   lmms
-  davinci-resolve
+  kdenlive
   obs-studio
   tor-browser-bundle-bin
   transmission
   ani-cli
   mangal
   mov-cli 
-  gnome-secrets
+  keepassxc
   protonvpn-cli
   gimp-with-plugins
   
