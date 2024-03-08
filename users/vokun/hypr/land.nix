@@ -21,7 +21,7 @@ monitor=eDP-1,preferred,auto,1
 # Execute your favorite apps at launch
 exec-once = udiskie
 exec-once = hyprpaper
-#exec-once = waybar
+exec-once = waybar
 
 # Source a file (multi-file configs)
 # source = ~/.config/hypr/myColors.conf
@@ -52,8 +52,8 @@ general {
     gaps_in = 3
     gaps_out = 5
     border_size = 1
-    col.active_border = rgba(33ccffee) rgba(00ff99ee) 45deg
-    col.inactive_border = rgba(595959aa)
+    col.active_border = rgba(f8f7f2ee) rgba(aaaaaaee) 45deg
+    col.inactive_border = rgba(333333aa)
 
     layout = dwindle
 

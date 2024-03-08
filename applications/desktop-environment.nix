@@ -45,6 +45,9 @@
   
   # Light
   programs.light.enable = true;
+  
+  # Dconf
+  programs.dconf.enable = true; 
 
   environment.systemPackages = (with pkgs; [
     # Hyprland
@@ -66,6 +69,7 @@
     xdg-utils
     polkit_gnome
     base16-schemes
+    #libsForQt5.qt5ct
 
     # Applications
     (brave.override {

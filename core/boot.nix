@@ -11,7 +11,7 @@
   
   boot.kernelParams = [ 
     "quiet"
-    "loglevel=3" 
+    "loglevel=3"
   ];
 
   # Bootloader. 

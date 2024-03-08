@@ -16,8 +16,8 @@
     "backlight" = {
         "format" = "{percent}% {icon}";
         "format-icons" = ["" "" "" "" "" "" "" "" ""];
-        "on-scroll-up" = "brightnessctl s +1%";
-        "on-scroll-down" = "brightnessctl s 1%-";
+        "on-scroll-up" = "light -A 1";
+        "on-scroll-down" = "light -U 1";
     };
     "battery" = {
         "states" = {

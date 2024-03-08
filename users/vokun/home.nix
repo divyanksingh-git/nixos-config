@@ -4,9 +4,7 @@
 
   home.username = "vokun";
   home.homeDirectory = "/home/vokun";
-  
-  home.packages = [];
-  
+    
   # Git
   programs.git = {
     enable = true;
@@ -34,8 +32,8 @@
   # Waybar
   programs.waybar = {
     enable = true;
-    systemd.enable = true;
-    systemd.target = "hyprland-session.target";
+    systemd.enable = false;
+    systemd.target = "dont-start.target";
     style = (import ./waybar/style.nix {});
     settings = [ (import ./waybar/config.nix {}) ];
   };
@@ -108,17 +106,23 @@
   };
 
   # Theming
-  gtk.iconTheme.package = pkgs.papirus-icon-theme;
+  gtk.enable = true;
+  gtk.iconTheme.package = pkgs.catppuccin-papirus-folders;
   gtk.iconTheme.name = "Papirus-Dark";
-
+  
+  qt.enable = true;
+  
   stylix = {
-      base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-material-dark-hard.yaml";
+      base16Scheme = "${pkgs.base16-schemes}/share/themes/black-metal-venom.yaml";
       polarity = "dark";
       autoEnable = true;
       image = ./cache/background.png;
+      targets.gnome.enable = true; 
       
-      cursor.package = pkgs.numix-cursor-theme;
-      
+      cursor.package = pkgs.graphite-cursors;
+      cursor.name = "graphite-dark";
+
+      targets.hyprland.enable=true;
       targets.waybar = {
         #enableCenterBackColors = true;
         enableLeftBackColors = true;
@@ -130,13 +134,15 @@
   # Environment Variables
   home.sessionVariables = {
     CHROME_EXECUTABLE="${pkgs.brave}/bin/brave";
-    XCURSOR_SIZE="24";
   };
    
   home.file =  {
    
     # Background
     ".config/hypr/background.png".source = ./cache/background.png;
+    
+    # Qt5ct
+    ".config/qt5ct/colors" = { source = ./themes/qt5ct-colors; recursive = true; };    
     
     # Hyprlock
     ".config/hypr/hyprlock.conf" = { text = (import ./hypr/lock.nix {});};

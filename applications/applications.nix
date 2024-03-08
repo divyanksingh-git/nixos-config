@@ -15,22 +15,23 @@
   bat
   lsd
   grc
-  wget 
-
+  wget
+  
   # Application
   libreoffice
   krita
   inkscape
   tenacity
   lmms
-  kdenlive
+  davinci-resolve
   obs-studio
   tor-browser-bundle-bin
   transmission
   ani-cli
   mangal
   mov-cli 
-  keepassxc
+  gnome-secrets
+  pass-wayland
   protonvpn-cli
   gimp-with-plugins
   

@@ -18,5 +18,6 @@
           
     ./misc/scripts.nix
     ./misc/environment-variables.nix
+    ./misc/desktop-icons.nix
   ];
 }
