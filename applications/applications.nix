@@ -31,7 +31,6 @@
   mangal
   mov-cli 
   gnome-secrets
-  pass-wayland
   protonvpn-cli
   gimp-with-plugins
   

@@ -31,6 +31,7 @@
   flutter
   android-studio
   git
+  gdb
   
   # Game Development
   godot_4

@@ -22,7 +22,7 @@
     wlr.enable = true;
     extraPortals = [ 
       pkgs.xdg-desktop-portal
-      pkgs.xdg-desktop-portal-gtk
+      pkgs.xdg-desktop-portal-wlr
     ];
   };
 
@@ -30,7 +30,7 @@
   security.polkit.enable = true;
   systemd.user.services.polkit-authentication-agent = {
     enable = true;
-    description = "polkit-gnome-authentication-agent-1";
+    description = "polkit-authentication-agent-1";
     wantedBy = [ "hyprland-session.target" ];
     wants = [ "hyprland-session.target" ];
     after = [ "hyprland-session.target" ];
