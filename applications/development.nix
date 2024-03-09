@@ -22,7 +22,10 @@
   
   # Utility
   termscp
-  
+  gnumake
+  pkg-config
+  zlib
+
   # Developemnt
   (vscodium.override { 
     commandLineArgs =["--enable-features=UseOzonePlatform --ozone-platform=x11"]; 
@@ -32,12 +35,19 @@
   flutter
   android-studio
   git
-  gdb
   
   # Game Development
   godot_4
   sfxr
   aseprite
   blender
+  
+  # C/Cpp
+  gdb
+  
+  # Python
+  python312Full
+  python312Packages.pip
+  pipx
   ];
 }

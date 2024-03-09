@@ -29,7 +29,6 @@
   transmission
   ani-cli
   mangal
-  mov-cli 
   keepassxc
   protonvpn-cli
   gimp-with-plugins

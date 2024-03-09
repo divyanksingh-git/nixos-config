@@ -104,20 +104,20 @@
      }
     ];
   };
-
+  
   # Theming
   gtk.enable = true;
   gtk.iconTheme.package = pkgs.catppuccin-papirus-folders;
   gtk.iconTheme.name = "Papirus-Dark";
   
   qt.enable = true;
-  
+  qt.platformTheme = "qtct";
+
   stylix = {
       base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
       polarity = "dark";
       autoEnable = true;
       image = ./cache/background.png;
-      targets.gnome.enable = true; 
       
       cursor.package = pkgs.graphite-cursors;
       cursor.name = "graphite-dark";
@@ -141,8 +141,11 @@
     # Background
     ".config/hypr/background.png".source = ./cache/background.png;
     
+    # Qt6ct
+    ".config/qt6ct/colors" = { source = ./themes/qtct-colors; recursive = true; };    
+    
     # Qt5ct
-    ".config/qt5ct/colors" = { source = ./themes/qt5ct-colors; recursive = true; };    
+    ".config/qt5ct/colors" = { source = ./themes/qtct-colors; recursive = true; };    
     
     # Hyprlock
     ".config/hypr/hyprlock.conf" = { text = (import ./hypr/lock.nix {});};
